@@ -1,0 +1,42 @@
+body {
+    background-color: lavenderblush;
+}
+
+.header {
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-left: 45%;
+    color: darkblue;
+}
+
+.container {
+    margin-left: 8%;
+    margin-top: 50px;
+    width: 85%;
+}
+
+.add-task {
+    width: 83%;
+    height: 30px;
+    border-color: black;
+    font-size: large;
+}
+
+button {
+    width: 15%;
+    height: 35px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: deepskyblue;
+}
+
+.task-list {
+    margin-top: 20px;
+    margin-left: 6%;
+    border: solid;
+    list-style-type: none;
+    border-radius: 20px;
+    width: 86%;
+    height: 40px;
+}
