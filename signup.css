@@ -1,0 +1,103 @@
+body {
+    background-color: black;
+}
+
+.form-container {
+    background-color: blue;
+    margin-left: 10%;
+    margin-top: 70px;
+    width: 80%;
+    height: fit-content;
+    border-radius: 25px;
+}
+
+.container {
+    margin-top: 20px;
+    display: flex;
+}
+
+fieldset {
+    display: inline-block;
+    width: 80%;
+    height: fit-content;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: white;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+.header {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 43%;
+    font-size: 20px;
+    color: white;
+}
+
+legend {
+    color: white;
+}
+
+label {
+    color: white;
+}
+
+input[type="text"],
+[type="date"],
+[type="tel"],
+[type="email"],
+select {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    color: white;
+    background-color: blue;
+}
+
+input[type="radio"],
+[type="checkbox"] {
+    margin-left: 20px;
+    color: black;
+}
+
+::placeholder {
+    color: white;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+.gender {
+    height: fit-content;
+}
+
+button {
+    background-color: black;
+    border-color: white;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    margin-left: 35%;
+    width: 30%;
+    height: 40px;
+    border-radius: 10px;
+    color: blue;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+input:-webkit-autofill {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+    caret-color: white;
+}
+
+.left-container {
+    width: 50%;
+}
+
+.right-container {
+    width: 50%;
+}
