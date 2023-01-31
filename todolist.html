@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <title>ToDoList</title>
 </head>
 
 <body>
-
     <div class="header">TO DO</div>
     <div class="container">
-        <input type="text" class="add-task" id="taskName">
-        <button onclick="addTask(document.getElementById('taskName').value)">ADD TASK</button>
+        <input type="text" class="add-task" id="taskName" placeholder="Add a task">
+        <button onclick="addTask(document.getElementById('taskName').value)" class="add-task-button">ADD TASK</button>
     </div>
     <ul id="taskList"></ul>
     <script src="todo.js"></script>

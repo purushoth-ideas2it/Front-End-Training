@@ -1,5 +1,5 @@
 body {
-    background-color: lavenderblush;
+    background-color: #f2f2f2;
 }
 
 .header {
@@ -14,17 +14,23 @@ body {
     margin-left: 8%;
     margin-top: 50px;
     width: 85%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .add-task {
-    width: 83%;
-    height: 30px;
-    border-color: black;
+    padding-left: 30px;
+    width: 80%;
+    height: 40px;
+    border-width: 0px;
+    border-radius: 10px;
     font-size: large;
 }
 
-button {
-    width: 15%;
+.add-task-button {
+    width: 14%;
     height: 35px;
     border-radius: 10px;
     border-color: black;
@@ -32,11 +38,92 @@ button {
 }
 
 .task-list {
-    margin-top: 20px;
+    position: relative;
+    display: inline-flex;
+    margin-top: 15px;
     margin-left: 6%;
-    border: solid;
     list-style-type: none;
-    border-radius: 20px;
-    width: 86%;
+    background-color: white;
+    border-radius: 10px;
+    width: 80%;
     height: 40px;
+    box-shadow: 0px 6px 1px #ccc;
+}
+
+input:focus {
+    outline: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    border: solid rgb(63, 63, 174);
+    border-width: 2px;
+    position: absolute;
+    top: 11px;
+    left: 10px;
+    border-radius: 20px;
+    height: 15px;
+    width: 15px;
+    background-color: white;
+}
+
+
+input~.checkmark:hover {
+    background-color: #ccc;
+}
+
+
+input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+input:checked~.checkmark:after {
+    display: block;
+}
+
+.checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 2px;
+    height: 7px;
+    border: solid rgb(63, 63, 174);
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.display-text {
+    display: block;
+    padding-left: 50px;
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+.fa-trash {
+    display: block;
+    position: absolute;
+    margin-top: 10px;
+    right: 20px;
+    font-size: 20px;
+}
+
+.completed-container {
+    display: inline-flex;
+    margin-top: 15px;
+    margin-left: 8%;
+    list-style-type: none;
+    border-radius: 10px;
+    width: 80%;
+    height: 40px;
+    box-shadow: 0px 6px 1px #ccc;
 }
