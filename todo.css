@@ -109,12 +109,17 @@ input:checked~.checkmark:after {
     font-size: 20px;
 }
 
-.fa-trash {
+.fa-trash,
+.fa-edit {
     display: block;
     position: absolute;
     margin-top: 10px;
     right: 20px;
     font-size: 20px;
+}
+
+.fa-edit {
+    right: 50px;
 }
 
 .completed-header {
@@ -146,4 +151,27 @@ input:checked~.checkmark:after {
 
 #completedBody {
     display: none;
+}
+
+#save-button {
+    display: block;
+    position: absolute;
+    border-radius: 5px;
+    height: 25px;
+    width: 100px;
+    margin-top: 8px;
+    right: 40px;
+    font-size: 20px;
+    background-color: #2196F3;
+    color: white;
+    font-size: 15px;
+}
+
+.fa-times {
+    display: block;
+    position: absolute;
+    border-radius: 5px;
+    margin-top: 12px;
+    right: 15px;
+    font-size: 20px;
 }
