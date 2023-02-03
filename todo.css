@@ -1,4 +1,6 @@
 body {
+    max-width: 100%;
+    max-height: 100vh;
     background-color: #f2f2f2;
 }
 
@@ -174,4 +176,42 @@ input:checked~.checkmark:after {
     margin-top: 12px;
     right: 15px;
     font-size: 20px;
+}
+
+#popupContainer {
+    position: fixed;
+    border: solid black;
+    top: 180px;
+    left: 380px;
+    height: 200px;
+    width: 40%;
+    background-color: #f2f2f2;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+#displayContainer {
+    display: block;
+    margin-left: 180px;
+    margin-top: 40px;
+    border-color: solid #2196F3;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+#confirmButton,
+#cancelButton {
+    width: 120px;
+    height: 30px;
+    border: solid black;
+    border-radius: 10px;
+    margin-top: 80px;
+    margin-left: 120px;
+    background-color: #2196F3;
+    font-size: 15px;
+    color: white;
+}
+
+#cancelButton {
+    margin-left: 30px;
 }

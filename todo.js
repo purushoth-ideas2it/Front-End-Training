@@ -62,7 +62,6 @@ function editTask(element) {
 
 function updateTask(element) {
     let task = element.previousSibling.previousSibling.previousSibling.innerText;
-    console.log(task);
     if (0 == task.length) {
         alert("cannot Update Task");
         element.previousSibling.previousSibling.previousSibling.focus();
@@ -87,7 +86,11 @@ function cancel(element) {
 
 function display(event) {
     if (event.target.className == "fa-solid fa-trash") {
-        deleteTask(event.target.parentNode)
+        let x = showWarning;
+        console.log(x);
+        if (x) {
+            deleteTask(event.target.parentNode)
+        }
     }
 }
 
@@ -198,4 +201,29 @@ function updateCompleteCount() {
     if (null != document.getElementById("completedContainer")) {
         document.getElementById("completed-header-text").innerText = "Completed  " + document.getElementById("completedTaskList").childElementCount;
     }
+}
+
+function showWarning() {
+    let popupcontainer = document.createElement("div");
+    let displayText = document.createElement("span");
+    let confirmButton = document.createElement("button");
+    let cancelButton = document.createElement("button");
+    popupcontainer.id = "popupContainer";
+    displayText.id = "displayContainer";
+    confirmButton.id = "confirmButton";
+    confirmButton.setAttribute('onclick', 'confirmDelete()');
+    confirmButton.innerText = "Confirm";
+    cancelButton.innerText = "Cancel";
+    cancelButton.id = "cancelButton"
+    displayText.innerText = "CONFIRM DELETE";
+    popupcontainer.appendChild(displayText);
+    popupcontainer.appendChild(confirmButton);
+    popupcontainer.appendChild(cancelButton);
+    document.body.appendChild(popupcontainer);
+}
+
+function confirmDelete() {
+    document.getElementById("popupContainer").remove();
+    let x = true;
+    return x;
 }
