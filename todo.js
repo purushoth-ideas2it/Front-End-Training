@@ -17,6 +17,7 @@ function displayTask(newTask) {
     let displayTextContainer = document.createElement("label");
     let displayText = document.createElement("span");
     displayText.innerText = newTask;
+    displayText.id = "displayText";
     let customCheckBox = document.createElement("span");
     let editIcon = document.createElement("i");
     let deleteIcon = document.createElement("i");
@@ -62,6 +63,7 @@ function editTask(element) {
 
 function updateTask(element) {
     let task = element.previousSibling.previousSibling.previousSibling.innerText;
+    element.parentElement.firstChild.firstChild.value = task;
     if (0 == task.length) {
         alert("cannot Update Task");
         element.previousSibling.previousSibling.previousSibling.focus();
@@ -85,12 +87,16 @@ function cancel(element) {
 }
 
 function display(event) {
+
     if (event.target.className == "fa-solid fa-trash") {
-        let x = showWarning;
-        console.log(x);
-        if (x) {
+        showWarning();
+        document.getElementById("confirmButton").addEventListener('click', function () {
             deleteTask(event.target.parentNode)
-        }
+            document.getElementById("hide-background").remove();
+        });
+        document.getElementById("cancelButton").addEventListener('click', function () {
+            document.getElementById("hide-background").remove();
+        });
     }
 }
 
@@ -168,11 +174,9 @@ function completedTask(value, checked, element) {
 }
 
 function deleteTask(value) {
-    if (confirm("Confirm delete")) {
-        value.remove();
-        removeCompleteBlock();
-        updateCompleteCount();
-    }
+    value.remove();
+    removeCompleteBlock();
+    updateCompleteCount();
 }
 
 function removeTask(value) {
@@ -204,14 +208,15 @@ function updateCompleteCount() {
 }
 
 function showWarning() {
+    let hideBackground = document.createElement("div");
     let popupcontainer = document.createElement("div");
     let displayText = document.createElement("span");
     let confirmButton = document.createElement("button");
     let cancelButton = document.createElement("button");
+    hideBackground.id = "hide-background";
     popupcontainer.id = "popupContainer";
     displayText.id = "displayContainer";
     confirmButton.id = "confirmButton";
-    confirmButton.setAttribute('onclick', 'confirmDelete()');
     confirmButton.innerText = "Confirm";
     cancelButton.innerText = "Cancel";
     cancelButton.id = "cancelButton"
@@ -219,11 +224,6 @@ function showWarning() {
     popupcontainer.appendChild(displayText);
     popupcontainer.appendChild(confirmButton);
     popupcontainer.appendChild(cancelButton);
-    document.body.appendChild(popupcontainer);
-}
-
-function confirmDelete() {
-    document.getElementById("popupContainer").remove();
-    let x = true;
-    return x;
+    hideBackground.appendChild(popupcontainer);
+    document.body.appendChild(hideBackground);
 }
